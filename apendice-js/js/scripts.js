@@ -58,4 +58,19 @@ const users = [
   { name: "Pedro", available: false },
 ];
 const availableUsers = users.filter((user) => user.available);
+const notAvailableUsers = users.filter((user) => !user.available);
 console.log(availableUsers);
+console.log(notAvailableUsers);
+
+//map
+const products = [
+  { name: "Camisa", category: "Roupas", price: 10.98 },
+  { name: "Bermuda", category: "Roupas", price: 23.4 },
+  { name: "Tênis", category: "Calçados", price: 55.0 },
+  { name: "fogão", category: "Eletrodomésticos", price: 150.0 },
+  { name: "geladeira", category: "Eletrodomésticos", price: 850.0 },
+];
+products.map((product) => {
+  if (product.category !== "Roupas") product.onSale = true;
+});
+console.log(products);
