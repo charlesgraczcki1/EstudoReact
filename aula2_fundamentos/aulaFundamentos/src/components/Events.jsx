@@ -13,6 +13,17 @@ const Events = () => {
           Click aqui também
         </button>
       </div>
+      <div>
+        <button
+          onClick={() => {
+            if (true) {
+              console.log("isso não deveria existir =p");
+            }
+          }}
+        >
+          Click aqui mais uma vez
+        </button>
+      </div>
     </div>
   );
 };
