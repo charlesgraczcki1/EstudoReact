@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "dev",
+			"group": "build",
+			"label": "npm: dev",
+			"cwd": "${workspaceFolder}/aula2_fundamentos/aulaFundamentos",
+			"presentation": {
+				"reveal": "silent"
+			}
+		}
+	]
+}
