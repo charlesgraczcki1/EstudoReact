@@ -3,6 +3,13 @@ const Events = () => {
     console.log(e);
     console.log("Ativando o evento");
   };
+  const rendderalgumacoisa = (x) => {
+    if (x) {
+      return <h1>Renderizando isso</h1>;
+    } else {
+      return <h1>Renderizando aquilo</h1>;
+    }
+  };
   return (
     <div>
       <div>
@@ -24,7 +31,10 @@ const Events = () => {
           Click aqui mais uma vez
         </button>
       </div>
+      {rendderalgumacoisa(true)}
+      {rendderalgumacoisa(false)}
     </div>
   );
 };
+
 export default Events;

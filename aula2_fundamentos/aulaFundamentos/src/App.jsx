@@ -5,6 +5,7 @@ import FirstComponent from "./components/FirstComponent";
 import TemplateExpressions from "./components/templateExpressions";
 import MyComponent from "./components/Mycomponent";
 import Events from "./components/Events";
+import Challange from "./components/challange";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
         <TemplateExpressions />
         <MyComponent />
         <Events />
+        <Challange />
       </div>
     </>
   );
