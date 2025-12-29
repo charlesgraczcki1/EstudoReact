@@ -2,11 +2,18 @@ import { useState } from "react";
 
 function ListRender() {
   const [list] = useState(["Charles", "Gabriel", "josias"]);
-  const [users] = useState([
+  const [users, setUsers] = useState([
     { id: 1, name: "Charles", age: 28 },
-    { id: 40028922, name: "Gabriel", age: 26 },
-    { id: 999888124, name: "josias", age: 24 },
+    { id: 2, name: "Gabriel", age: 26 },
+    { id: 3, name: "josias", age: 24 },
   ]);
+  const deleteRandom = () => {
+    const randomNumber = Math.floor(Math.random() * 4);
+    setUsers((prevUsers) => {
+      console.log(prevUsers);
+      return prevUsers.filter((user) => randomNumber !== user.id);
+    });
+  };
   {
     /*Geralmente eu altero os nomes das variaveis, mas o josias me pegou de mais eu ri e deixei ali*/
   }
@@ -26,6 +33,7 @@ function ListRender() {
           </li>
         ))}
       </ul>
+      <button onClick={deleteRandom}>Apaga qualquer um</button>
     </div>
   );
 }
