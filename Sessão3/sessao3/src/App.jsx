@@ -7,6 +7,7 @@ import ManageData from "./components/ManageData";
 import ListRender from "./components/ListRender";
 import ConditioonalRender from "./components/ConditioonalRender";
 import ShowUserName from "./components/ShowUserName";
+import CarDetails from "./components/CarDetails";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -28,7 +29,10 @@ function App() {
           <ManageData />
           <ListRender />
           <ConditioonalRender />
+          {/*Props*/}
           <ShowUserName name={userName} mordidopor={mosquito} rua={rua} />
+          {/*Destructuring*/}
+          <CarDetails brand="VW" km={8000} color="vermelho" />
         </div>
       </div>
     </>
