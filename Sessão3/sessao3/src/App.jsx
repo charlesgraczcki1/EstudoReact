@@ -6,10 +6,13 @@ import City from "./assets/City.jpg";
 import ManageData from "./components/ManageData";
 import ListRender from "./components/ListRender";
 import ConditioonalRender from "./components/ConditioonalRender";
+import ShowUserName from "./components/ShowUserName";
 
 function App() {
   const [count, setCount] = useState(0);
-
+  const mosquito = " zika";
+  const [userName] = useState("zoka");
+  const [rua] = useState("zuka");
   return (
     <>
       <title>Sessão 3</title>
@@ -25,6 +28,7 @@ function App() {
           <ManageData />
           <ListRender />
           <ConditioonalRender />
+          <ShowUserName name={userName} mordidopor={mosquito} rua={rua} />
         </div>
       </div>
     </>
