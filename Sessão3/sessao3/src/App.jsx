@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
 import "./App.css";
@@ -8,9 +8,9 @@ import ListRender from "./components/ListRender";
 import ConditioonalRender from "./components/ConditioonalRender";
 import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
+import Fragmento from "./components/Fragmento";
 
 function App() {
-  const [count, setCount] = useState(0);
   const mosquito = " zika";
   const [userName] = useState("zoka");
   const [rua] = useState("zuka");
@@ -51,6 +51,8 @@ function App() {
               bateu={car.bateu}
             />
           ))}
+          {/*Fragments*/}
+          <Fragmento propfragment="fogos de artificio não são legais em area urbana" />
         </div>
       </div>
     </>
