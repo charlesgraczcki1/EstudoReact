@@ -11,6 +11,8 @@ import CarDetails from "./components/CarDetails";
 import Fragmento from "./components/Fragmento";
 import Container from "./components/Container";
 import ExecuteFunction from "./components/ExecuteFunction";
+import Message from "./components/message";
+import ChangeMessageState from "./components/ChangeMessageState";
 function App() {
   const mosquito = " zika";
   const [userName] = useState("zoka");
@@ -24,6 +26,10 @@ function App() {
   function showMessage() {
     console.log("voce clicou!");
   }
+  const [message, setMessage] = useState("");
+  const handleMessage = (msg) => {
+    setMessage(msg);
+  };
   return (
     <>
       <title>Sessão 3</title>
@@ -64,6 +70,9 @@ function App() {
           </Container>
           {/*executar a função*/}
           <ExecuteFunction myFunction={showMessage} />
+          {/*state lift*/}
+          <Message msg={message} />
+          <ChangeMessageState handleMessage={handleMessage} />
         </div>
       </div>
     </>
