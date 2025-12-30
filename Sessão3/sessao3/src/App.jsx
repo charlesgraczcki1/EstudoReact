@@ -9,7 +9,8 @@ import ConditioonalRender from "./components/ConditioonalRender";
 import ShowUserName from "./components/ShowUserName";
 import CarDetails from "./components/CarDetails";
 import Fragmento from "./components/Fragmento";
-
+import Container from "./components/Container";
+import ExecuteFunction from "./components/ExecuteFunction";
 function App() {
   const mosquito = " zika";
   const [userName] = useState("zoka");
@@ -20,6 +21,9 @@ function App() {
     { id: 3, brand: "Mercedes", color: "cinza", bateu: true, km: 900000 },
     { id: 4, brand: "Renaut", color: "preto", bateu: true, km: 0.25 },
   ];
+  function showMessage() {
+    console.log("voce clicou!");
+  }
   return (
     <>
       <title>Sessão 3</title>
@@ -45,6 +49,7 @@ function App() {
           {/*Loop em array de objetos*/}
           {cars.map((car) => (
             <CarDetails
+              key={car.id}
               brand={car.brand}
               color={car.color}
               km={car.km}
@@ -53,6 +58,12 @@ function App() {
           ))}
           {/*Fragments*/}
           <Fragmento propfragment="fogos de artificio não são legais em area urbana" />
+          {/*children prop*/}
+          <Container meuvalor="testando123">
+            <p>E este é o conteudo</p>
+          </Container>
+          {/*executar a função*/}
+          <ExecuteFunction myFunction={showMessage} />
         </div>
       </div>
     </>
