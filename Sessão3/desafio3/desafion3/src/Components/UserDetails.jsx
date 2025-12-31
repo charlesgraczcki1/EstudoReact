@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserDetails = ({ id, name, age, profession }) => {
+const UserDetails = ({ name, age, profession }) => {
   if (age < 18) {
     return (
       <p>
