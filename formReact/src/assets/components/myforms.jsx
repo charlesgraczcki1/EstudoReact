@@ -1,39 +1,62 @@
 import "./MyForms.css";
 import { useState } from "react";
-const MyForms = () => {
+const MyForms = ({ user }) => {
+  //6- Gerenciamento de imputs
   // 3- Gerenciamento de dados
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
+  const [name, setName] = useState(user ? user.name : "");
+  const [email, setEmail] = useState(user ? user.email : "");
   const handleName = (e) => {
     setName(e.target.value);
   };
-  console.log(email);
-  console.log(name);
+
+  // console.log(email);
+  // console.log(name);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (name && email) {
+      console.log("enviando formulario");
+      console.log("seu nome é", name, "e seu email é", email);
+
+      // limpar forms
+      setName("");
+      setEmail("");
+    } else {
+      console.log(
+        "algum de seus dados  está vazio, você deve preencher os campos corretamente!"
+      );
+    }
+  };
 
   return (
     <div>
+      {/*5- Envio de form */}
       {/* 1 - Criação de form */}
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
+          {/* manipulação de state */}
           <label htmlFor="name">Nome:</label>
           <input
             type="text"
             name="name"
             placeholder=" Digite seu nome aqui"
             onChange={handleName}
+            value={name}
           />
         </div>
-        {/* Label envolvendo o input */}
+        {/*3 Label envolvendo o input */}
         <label>
+          {/*4 Simplificação de manipulação de state */}
           <span>E-mail</span>
           <input
             type="email"
             name="email"
             placeholder="Digite seu Email aqui"
             onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
         </label>
-        <input type="submit" value="enviar" />
+        {name && email ? <input type="submit" value="Enviar" /> : null}
       </form>
     </div>
   );

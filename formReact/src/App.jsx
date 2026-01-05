@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <MyForms />
+      <MyForms user={{ name: "josias", email: "josias@gmail.com" }} />
     </>
   );
 }
