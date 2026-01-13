@@ -5,6 +5,9 @@ const MyForms = ({ user }) => {
   // 3- Gerenciamento de dados
   const [name, setName] = useState(user ? user.name : "");
   const [email, setEmail] = useState(user ? user.email : "");
+  const [bio, setBio] = useState(user ? user.bio : "");
+  const [role, setRole] = useState(user ? user.role : "");
+
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -17,6 +20,9 @@ const MyForms = ({ user }) => {
     if (name && email) {
       console.log("enviando formulario");
       console.log("seu nome é", name, "e seu email é", email);
+      console.log("");
+      console.log("sua mensagem de bio", bio);
+      console.log("sua função é ", role);
 
       // limpar forms
       setName("");
@@ -56,8 +62,31 @@ const MyForms = ({ user }) => {
             value={email}
           />
         </label>
+        {/* 8- Text Area */}
+        <label>
+          <span>BIO</span>
+          <textarea
+            name="Bio"
+            placeholder="Descrição do usuário"
+            onChange={(e) => setBio(e.target.value)}
+            value={bio}
+          ></textarea>
+        </label>
+
         {name && email ? <input type="submit" value="Enviar" /> : null}
       </form>
+      <label>
+        <span>Função no sistema</span>
+        <select
+          name="role"
+          onChange={(e) => setRole(e.target.value)}
+          value={role}
+        >
+          <option value="user">usuário</option>
+          <option value="editor">Editor</option>
+          <option value="admin">administrador</option>
+        </select>
+      </label>
     </div>
   );
 };
